@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.11)
+project (Launch_Thread_Performance)
+set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+set(THREADS_PREFER_PTHREAD_FLAG TRUE)
+find_package(Threads REQUIRED)
+add_executable(ltp do_something.cpp test_thread.cpp )
+target_link_libraries( ltp Threads::Threads )
